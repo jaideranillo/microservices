@@ -1,6 +1,6 @@
 # HTTP
 info:
-  component: turbine
+  component: Turbine
 
 server:
   port: ${TURBINE_PORT:3434}

@@ -3,7 +3,9 @@ package com.microservices.scn.writer;
 import io.swagger.annotations.Api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
@@ -16,6 +18,8 @@ import static springfox.documentation.builders.RequestHandlerSelectors.withClass
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableCircuitBreaker
+@EnableHystrix
 @EnableSwagger2
 public class WriterApplication {
 
