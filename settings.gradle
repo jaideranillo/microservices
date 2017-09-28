@@ -4,4 +4,7 @@ include 'comic'
 include 'configuration-server'
 include 'eureka-server'
 include 'administration-server'
+include 'turbine'
+include 'hystrix-dashboard'
+include 'zuul'
 

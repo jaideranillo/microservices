@@ -1,0 +1,36 @@
+# HTTP
+info:
+  component: turbine
+
+server:
+  port: ${TURBINE_PORT:3434}
+
+turbine:
+  stream:
+    port: 8989
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  port: -1
+  security:
+    enabled: false
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    com.microservices.scn: 'DEBUG'
+
+# Discovery Server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

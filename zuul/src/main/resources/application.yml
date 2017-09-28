@@ -1,6 +1,6 @@
 # Server
 server:
-  port: ${PORT:5555}
+  port: ${ZUUL_PORT:8080}
 
 logging:
   file: logs/${spring.application.name}.log
