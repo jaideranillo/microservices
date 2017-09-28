@@ -1,0 +1,29 @@
+# Server
+server:
+  port: ${ZIPKIN_PORT:9410}
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    org.springframework.web: 'INFO'
+    com.microservices.scn: 'DEBUG'
+
+security:
+  user:
+    name: admin
+    password: admin
+
+# Discovery Server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+spring:
+   rabbitmq:
+     host: localhost
+     port: 5672
+     username: guest
+     password: guest

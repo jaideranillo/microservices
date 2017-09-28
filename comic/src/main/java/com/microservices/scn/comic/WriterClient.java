@@ -19,7 +19,7 @@ public class WriterClient {
   }
 
   public String fallbackWriter(){
-    return "Error pinging sadr. This is a fallback message";
+    return "Error contact writer. This is a default message";
   }
 
 }

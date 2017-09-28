@@ -7,4 +7,5 @@ include 'administration-server'
 include 'turbine'
 include 'hystrix-dashboard'
 include 'zuul'
+include 'zipkin-server'
 
