@@ -1,0 +1,15 @@
+# Server
+server:
+  port: ${PORT:5555}
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    org.springframework.web: 'INFO'
+    com.microservices.scn.writer: 'DEBUG'
+
+management:
+  security:
+    enabled: false
