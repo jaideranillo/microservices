@@ -1,5 +1,6 @@
 package com.microservices.scn.writer.controller;
 
+import com.microservices.scn.writer.Configuration.GetInformation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -21,7 +22,7 @@ public class WriterController {
   @Autowired
   DiscoveryClient discoveryClient;
 
-  @RequestMapping(value = "writer/", method = RequestMethod.GET)
+  @RequestMapping(value = "writer", method = RequestMethod.GET)
   @ApiOperation(value = "Writer", nickname = "Writer", response = String.class)
   @ApiResponses(value = { @ApiResponse(code = 200, message = "Success"),
       @ApiResponse(code = 201, message = "Created"), @ApiResponse(code = 400, message = "Bad Request"),
@@ -33,6 +34,6 @@ public class WriterController {
         logger.info("/hello, host:" + instance.getHost() + ", service_id:" + instance.getServiceId());
       });
     });
-    return  "Writing comics!!";
+    return  "Writing comics!!" + "Port: "+ GetInformation.getPort();
   }
 }

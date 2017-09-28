@@ -1,5 +1,6 @@
 package com.microservices.scn.comic.controller;
 
+import com.microservices.scn.comic.WriterClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -21,6 +22,9 @@ public class ComicController {
   @Autowired
   DiscoveryClient discoveryClient;
 
+  @Autowired
+  private WriterClient writerClient;
+
   @RequestMapping(value = "comic", method = RequestMethod.GET)
   @ApiOperation(value = "Comic", nickname = "Comic", response = String.class)
   @ApiResponses(value = { @ApiResponse(code = 200, message = "Success"),
@@ -35,4 +39,15 @@ public class ComicController {
     });
     return  "Comics ready!!";
   }
+
+  @RequestMapping(value = "contactWriter", method = RequestMethod.GET)
+  @ApiOperation(value = "Comic", nickname = "Comic", response = String.class)
+  @ApiResponses(value = { @ApiResponse(code = 200, message = "Success"),
+      @ApiResponse(code = 201, message = "Created"), @ApiResponse(code = 400, message = "Bad Request"),
+      @ApiResponse(code = 401, message = "Unauthorized"), @ApiResponse(code = 403, message = "Forbidden"),
+      @ApiResponse(code = 404, message = "Not Found"), @ApiResponse(code = 500, message = "Failure") })
+  public String contactWriter() {
+    return writerClient.contactWriter();
+  }
+
 }
