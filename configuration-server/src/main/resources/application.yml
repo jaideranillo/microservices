@@ -1,0 +1,46 @@
+# HTTP
+server:
+  port: ${CONFIGURATION_PORT:8888}
+
+management:
+  security:
+    enabled: false
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.microservices.scn: 'DEBUG'
+
+spring:
+  application:
+    name: configuration-server
+# profiles:
+#   active: ${SPRING_PROFILES_ACTIVE}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+---
+#spring:
+#  profiles: github
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/jaideranillo/Microservices-Configuration
+
+---
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+#          searchLocations: file:///D:/git_workspace/Microservices-Configuration # Windows
+          searchLocations: file:/Users/jaider/IdeaProjects/microservices-provider
+          failOnError : false

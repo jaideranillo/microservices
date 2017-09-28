@@ -1,0 +1,11 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+
+    compile('org.springframework.boot:spring-boot-starter-undertow')
+    compile('org.springframework.cloud:spring-cloud-config-server')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+    compile('org.springframework.cloud:spring-cloud-config-monitor')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

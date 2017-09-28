@@ -1,0 +1,15 @@
+# HTTP
+server:
+  port: ${ADMIN_PORT:9999}
+
+management:
+  security:
+    enabled: false
+
+# Discovery Server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  #instance:
+  #   preferIpAddress: true

@@ -1,7 +1,7 @@
 spring:
   application:
-    name: comic-service
+    name: eureka-server
   cloud:
     config:
-      failFast: false
+      failFast: true
       uri: http://localhost:8888

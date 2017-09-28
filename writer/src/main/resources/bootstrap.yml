@@ -1,3 +1,7 @@
 spring:
   application:
     name: writer-service
+  cloud:
+    config:
+      failFast: false
+      uri: http://localhost:8888

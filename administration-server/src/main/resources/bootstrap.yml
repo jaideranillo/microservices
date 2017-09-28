@@ -1,7 +1,7 @@
 spring:
   application:
-    name: comic-service
+    name: administration-service
   cloud:
     config:
-      failFast: false
+      failFast: true
       uri: http://localhost:8888
