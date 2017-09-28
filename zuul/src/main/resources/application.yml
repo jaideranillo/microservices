@@ -14,6 +14,16 @@ management:
   security:
     enabled: false
 
+zuul:
+  prefix: /api
+  routes:
+    writer-service:
+      path: /writer/**
+      serviceId: writer-service
+    comic-service:
+      path: /comic/**
+      serviceId: comic-service
+
 # Discovery Server
 eureka:
   client:
